@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/RdP/src" modelPluginID="RdP" modelName="RdP" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="19.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>RdP.ecore</foreignModel>
+  <genPackages prefix="RedDePetri" disposableProviderFactory="true" ecorePackage="RdP.ecore#/">
+    <genClasses ecoreClass="RdP.ecore#//RdP">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//RdP/transiciones"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//RdP/lugares"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//RdP/arcos"/>
+    </genClasses>
+    <genClasses ecoreClass="RdP.ecore#//Lugar">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Lugar/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Lugar/marca"/>
+    </genClasses>
+    <genClasses ecoreClass="RdP.ecore#//Transicion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Transicion/name"/>
+    </genClasses>
+    <genClasses ecoreClass="RdP.ecore#//Arco">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Arco/peso"/>
+    </genClasses>
+    <genClasses ecoreClass="RdP.ecore#//ArcoTL">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RdP.ecore#//ArcoTL/origen"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RdP.ecore#//ArcoTL/destino"/>
+    </genClasses>
+    <genClasses ecoreClass="RdP.ecore#//ArcoLT">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RdP.ecore#//ArcoLT/origen"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RdP.ecore#//ArcoLT/destino"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
