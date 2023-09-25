@@ -5,54 +5,54 @@ import "platform:/resource/RdP/model/RdP.ecore" as rdp
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 RdP returns rdp::RdP:
-	'RdP'
-	'{'
-		'transiciones' '{' transiciones+=Transicion ( "," transiciones+=Transicion)* '}' 
-		'lugares' '{' lugares+=Lugar ( "," lugares+=Lugar)* '}' 
-		'arcos' '{' arcos+=Arco ( "," arcos+=Arco)* '}' 
-	'}';
+    'RdP'
+    '{'
+        'transiciones' '{' transiciones+=Transicion ( "," transiciones+=Transicion)* '}' 
+        'lugares' '{' lugares+=Lugar ( "," lugares+=Lugar)* '}' 
+        'arcos' '{' arcos+=Arco ( "," arcos+=Arco)* '}' 
+    '}';
 
 
 
 Arco returns rdp::Arco:
-	Arco_Impl | ArcoTL | ArcoLT;
+    Arco_Impl | ArcoTL | ArcoLT;
 
 Transicion returns rdp::Transicion:
-	{rdp::Transicion}
-	'Transicion'
-	name=EString;
+    {rdp::Transicion}
+    'Transicion'
+    name=EString;
 
 Lugar returns rdp::Lugar:
-	'Lugar'
-	name=EString
-	'{'
-		'marca' marca=EInt
-	'}';
+    'Lugar'
+    name=EString
+    '{'
+        'marca' marca=EInt
+    '}';
 
 Arco_Impl returns rdp::Arco:
-	'Arco'
-	'{'
-		'peso' peso=EInt
-	'}';
+    'Arco'
+    '{'
+        'peso' peso=EInt
+    '}';
 
 EString returns ecore::EString:
-	STRING | ID;
+    STRING | ID;
 
 EInt returns ecore::EInt:
-	'-'? INT;
+    '-'? INT;
 
 ArcoTL returns rdp::ArcoTL:
-	'ArcoTL'
-	'{'
-		'peso' peso=EInt
-		'origen' origen=[rdp::Transicion|EString]
-		'destino' destino=[rdp::Lugar|EString]
-	'}';
+    'ArcoTL'
+    '{'
+        'peso' peso=EInt
+        'origen' origen=[rdp::Transicion|EString]
+        'destino' destino=[rdp::Lugar|EString]
+    '}';
 
 ArcoLT returns rdp::ArcoLT:
-	'ArcoLT'
-	'{'
-		'peso' peso=EInt
-		'origen' origen=[rdp::Lugar|EString]
-		'destino' destino=[rdp::Transicion|EString]
-	'}';
+    'ArcoLT'
+    '{'
+        'peso' peso=EInt
+        'origen' origen=[rdp::Lugar|EString]
+        'destino' destino=[rdp::Transicion|EString]
+    '}';
