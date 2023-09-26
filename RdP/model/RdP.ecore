@@ -23,14 +23,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArcoTL" eSuperTypes="#//Arco">
     <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
-        eType="#//Transicion"/>
+        eType="#//Transicion" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
-        eType="#//Lugar"/>
+        eType="#//Lugar" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArcoLT" eSuperTypes="#//Arco">
     <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
-        eType="#//Lugar"/>
+        eType="#//Lugar" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
-        eType="#//Transicion"/>
+        eType="#//Transicion" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

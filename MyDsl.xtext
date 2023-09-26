@@ -41,18 +41,20 @@ EString returns ecore::EString:
 EInt returns ecore::EInt:
     '-'? INT;
 
+
+
 ArcoTL returns rdp::ArcoTL:
-    'ArcoTL'
-    '{'
-        'peso' peso=EInt
-        'origen' origen=[rdp::Transicion|EString]
-        'destino' destino=[rdp::Lugar|EString]
-    '}';
+	'ArcoTL'
+	'{'
+		'peso' peso=EInt
+		'origen' origen=Transicion
+		'destino' destino=Lugar
+	'}';
 
 ArcoLT returns rdp::ArcoLT:
-    'ArcoLT'
-    '{'
-        'peso' peso=EInt
-        'origen' origen=[rdp::Lugar|EString]
-        'destino' destino=[rdp::Transicion|EString]
-    '}';
+	'ArcoLT'
+	'{'
+		'peso' peso=EInt
+		'origen' origen=Lugar
+		'destino' destino=Transicion
+	'}';
