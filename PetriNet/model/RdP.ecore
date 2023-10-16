@@ -8,6 +8,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Element">
     <eStructuralFeatures xsi:type="ecore:EReference" name="presencecondition" lowerBound="1"
         eType="#//PresenceCondition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Place" eSuperTypes="#//Element">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -38,8 +40,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="PresenceCondition">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" lowerBound="1"
         upperBound="-1" eType="#//Element" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="formula" lowerBound="1"
@@ -59,26 +59,32 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="presencecondition" lowerBound="1"
         upperBound="-1" eType="#//PresenceCondition" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Operand">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="result" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operand"/>
   <eClassifiers xsi:type="ecore:EClass" name="Unary" eSuperTypes="#//Operand">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" lowerBound="1"
-        eType="#//Operand" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" eType="#//Operand"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" lowerBound="1" eType="#//UnEnum"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="not" eSuperTypes="#//Unary"/>
   <eClassifiers xsi:type="ecore:EClass" name="Binary" eSuperTypes="#//Operand">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" lowerBound="2"
-        upperBound="2" eType="#//Operand" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" lowerBound="1" eType="#//Operand"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="op" lowerBound="1" eType="#//BinEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" eType="#//Operand"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="or" eSuperTypes="#//Binary"/>
-  <eClassifiers xsi:type="ecore:EClass" name="xor" eSuperTypes="#//Binary"/>
-  <eClassifiers xsi:type="ecore:EClass" name="and" eSuperTypes="#//Binary"/>
-  <eClassifiers xsi:type="ecore:EClass" name="implies" eSuperTypes="#//Binary"/>
-  <eClassifiers xsi:type="ecore:EClass" name="double_implication" eSuperTypes="#//Binary"/>
   <eClassifiers xsi:type="ecore:EClass" name="Feature" eSuperTypes="#//Operand">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BinEnum">
+    <eLiterals name="and"/>
+    <eLiterals name="or" value="1"/>
+    <eLiterals name="xor" value="2"/>
+    <eLiterals name="double_implication" value="3"/>
+    <eLiterals name="implies" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnEnum">
+    <eLiterals name="not"/>
   </eClassifiers>
 </ecore:EPackage>

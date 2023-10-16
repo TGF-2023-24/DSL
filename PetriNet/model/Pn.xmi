@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RedDePetri:Pn
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:RedDePetri="http://RedDePetri">
+  <elements
+      xsi:type="RedDePetri:Place">
+    <presencecondition/>
+  </elements>
+</RedDePetri:Pn>
