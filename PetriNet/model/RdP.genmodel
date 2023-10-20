@@ -5,23 +5,29 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>RdP.ecore</foreignModel>
   <genPackages prefix="RedDePetri" disposableProviderFactory="true" ecorePackage="RdP.ecore#/">
-    <genClasses ecoreClass="RdP.ecore#//RdP">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//RdP/transitions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//RdP/places"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//RdP/arcs"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="RdP.ecore#//BinEnum">
+      <genEnumLiterals ecoreEnumLiteral="RdP.ecore#//BinEnum/and"/>
+      <genEnumLiterals ecoreEnumLiteral="RdP.ecore#//BinEnum/or"/>
+      <genEnumLiterals ecoreEnumLiteral="RdP.ecore#//BinEnum/xor"/>
+      <genEnumLiterals ecoreEnumLiteral="RdP.ecore#//BinEnum/double_implication"/>
+      <genEnumLiterals ecoreEnumLiteral="RdP.ecore#//BinEnum/implies"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="RdP.ecore#//UnEnum">
+      <genEnumLiterals ecoreEnumLiteral="RdP.ecore#//UnEnum/not"/>
+    </genEnums>
+    <genClasses ecoreClass="RdP.ecore#//Pn">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//Pn/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="RdP.ecore#//Element">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//Element/presencecondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Element/name"/>
     </genClasses>
     <genClasses ecoreClass="RdP.ecore#//Place">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Place/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Place/tokens"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Place/active"/>
     </genClasses>
-    <genClasses ecoreClass="RdP.ecore#//Transition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Transition/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Transition/active"/>
-    </genClasses>
+    <genClasses ecoreClass="RdP.ecore#//Transition"/>
     <genClasses ecoreClass="RdP.ecore#//Arc">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Arc/weight"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Arc/active"/>
     </genClasses>
     <genClasses ecoreClass="RdP.ecore#//ArcTP">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//ArcTP/source"/>
@@ -33,36 +39,31 @@
     </genClasses>
     <genClasses ecoreClass="RdP.ecore#//PresenceCondition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//PresenceCondition/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//PresenceCondition/active"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//PresenceCondition/transitions"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//PresenceCondition/places"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//PresenceCondition/arcs"/>
-    </genClasses>
-    <genClasses ecoreClass="RdP.ecore#//Formula">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Formula/result"/>
-    </genClasses>
-    <genClasses ecoreClass="RdP.ecore#//or">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//or/operands"/>
-    </genClasses>
-    <genClasses ecoreClass="RdP.ecore#//and">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//and/operands"/>
-    </genClasses>
-    <genClasses ecoreClass="RdP.ecore#//implies">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//implies/operands"/>
-    </genClasses>
-    <genClasses ecoreClass="RdP.ecore#//double_implication">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//double_implication/operands"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//PresenceCondition/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//PresenceCondition/formula"/>
     </genClasses>
     <genClasses ecoreClass="RdP.ecore#//FeatureModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureModel/formula"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureModel/variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureModel/features"/>
     </genClasses>
     <genClasses ecoreClass="RdP.ecore#//FeatureConfiguration">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureConfiguration/pn_150"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureConfiguration/featuremodel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureConfiguration/presencecondition"/>
     </genClasses>
-    <genClasses ecoreClass="RdP.ecore#//not">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//not/operand"/>
+    <genClasses ecoreClass="RdP.ecore#//Operand"/>
+    <genClasses ecoreClass="RdP.ecore#//Unary">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//Unary/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Unary/op"/>
+    </genClasses>
+    <genClasses ecoreClass="RdP.ecore#//not"/>
+    <genClasses ecoreClass="RdP.ecore#//Binary">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//Binary/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Binary/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//Binary/right"/>
+    </genClasses>
+    <genClasses ecoreClass="RdP.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Feature/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
