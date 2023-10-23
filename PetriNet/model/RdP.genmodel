@@ -15,6 +15,11 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="RdP.ecore#//UnEnum">
       <genEnumLiterals ecoreEnumLiteral="RdP.ecore#//UnEnum/not"/>
     </genEnums>
+    <genClasses ecoreClass="RdP.ecore#//FeatureConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureConfiguration/pn_150"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureConfiguration/featuremodel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureConfiguration/presencecondition"/>
+    </genClasses>
     <genClasses ecoreClass="RdP.ecore#//Pn">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//Pn/elements"/>
     </genClasses>
@@ -46,11 +51,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureModel/formula"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureModel/features"/>
     </genClasses>
-    <genClasses ecoreClass="RdP.ecore#//FeatureConfiguration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureConfiguration/pn_150"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureConfiguration/featuremodel"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//FeatureConfiguration/presencecondition"/>
-    </genClasses>
     <genClasses ecoreClass="RdP.ecore#//Operand"/>
     <genClasses ecoreClass="RdP.ecore#//Unary">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//Unary/right"/>
@@ -64,6 +64,9 @@
     </genClasses>
     <genClasses ecoreClass="RdP.ecore#//Feature">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RdP.ecore#//Feature/name"/>
+    </genClasses>
+    <genClasses ecoreClass="RdP.ecore#//Base">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RdP.ecore#//Base/feature"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
