@@ -1,0 +1,3 @@
+include 'pnpl.example'
+include 'pnpl.example.ide'
+include 'pnpl.example.tests'
