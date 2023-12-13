@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PNPL:pnpl xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:PNPL="http://www.petrinets.org/"
+    xsi:schemaLocation="http://www.petrinets.org/ pnpl.ecore">
+  <pn_150>
+    <elements
+        xsi:type="PNPL:Place"
+        name="p1"/>
+    <elements
+        xsi:type="PNPL:Place"
+        name="p2"/>
+    <elements
+        xsi:type="PNPL:Transition"
+        name="t1"/>
+    <elements
+        xsi:type="PNPL:ArcPT"
+        name="a1"
+        weight="1"
+        source="p1"
+        target="t1"/>
+    <elements
+        xsi:type="PNPL:ArcTP"
+        name="a2"
+        weight="1"
+        source="t1"
+        target="p1"/>
+  </pn_150>
+</PNPL:pnpl>
