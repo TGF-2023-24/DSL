@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PNPL:pnpl xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:PNPL="http://www.petrinets.org/"
+    xsi:schemaLocation="http://www.petrinets.org/ pnpl.ecore">
+  <featuremodel>
+    <nodes name="VendingMachine"/>
+    <nodes name="Container"
+        mandatory="true"/>
+    <nodes name="Supplement"/>
+    <nodes name="Beverage"/>
+    <nodes name="Solid"/>
+    <nodes name="Milk"
+        requires="Coffee"/>
+    <nodes name="Sugar"
+        requires="Beverage"/>
+    <nodes name="Tea"/>
+    <nodes name="Coffee"/>
+    <relations
+        Parent="VendingMachine"
+        Childs="Container Supplement"/>
+    <relations
+        Parent="Supplement"
+        Childs="Milk Sugar"
+        type="OR"/>
+    <relations
+        Parent="Container"
+        Childs="Beverage Solid"
+        type="OR"/>
+    <relations
+        Parent="Beverage"
+        Childs="Tea Coffee"
+        type="OR"/>
+  </featuremodel>
+  <presencecondition
+      id="Solid">
+    <expression
+        xsi:type="PNPL:Feature"
+        feature="Solid"/>
+  </presencecondition>
+  <presencecondition
+      id="Tea">
+    <expression
+        xsi:type="PNPL:Feature"
+        feature="Tea"/>
+  </presencecondition>
+  <presencecondition>
+    <expression
+        xsi:type="PNPL:BinaryExpression">
+      <left
+          xsi:type="PNPL:Feature"
+          feature="Tea"/>
+      <right
+          xsi:type="PNPL:Feature"
+          feature="Milk"/>
+    </expression>
+  </presencecondition>
+</PNPL:pnpl>
