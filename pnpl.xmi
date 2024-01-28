@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pnpl:pnpl xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:pnpl="http://www.petrinets.org/pnpl"
+    xsi:schemaLocation="http://www.petrinets.org/pnpl pnpl.ecore">
+  <pn_150/>
+  <featuremodel>
+    <nodes name="Coche"/>
+    <nodes name="Puertas"
+        exclude="C"/>
+    <nodes name="Tractor"
+        requires="Coche Cosechadora"/>
+    <nodes name="Cosechadora"
+        mandatory="true"
+        requires="Coche Tractor"/>
+    <nodes name="A"
+        requires="Cosechadora Coche Tractor"/>
+    <nodes name="B"
+        exclude="C"
+        requires="A Coche Cosechadora Tractor"/>
+    <nodes name="C"
+        exclude="B Puertas"
+        requires="A Coche Cosechadora Tractor"/>
+    <relations
+        parent="Coche"
+        childs="Tractor Cosechadora"/>
+    <relations
+        parent="A"
+        childs="B C"
+        type="ALTERNATIVE"/>
+    <relations
+        parent="Cosechadora"
+        childs="A"/>
+  </featuremodel>
+</pnpl:pnpl>
