@@ -286,24 +286,25 @@
         target="p_start"/>
   </pn_150>
   <featuremodel>
-    <nodes name="VendingMachine"/>
+    <nodes name="VendingMachine"
+        root="true"/>
     <nodes name="Container"
         mandatory="true"
         requires="VendingMachine"/>
     <nodes name="Supplement"
-        requires="VendingMachine Container"/>
+        requires="Container VendingMachine"/>
     <nodes name="Beverage"
-        requires="VendingMachine Container"/>
+        requires="Container VendingMachine"/>
     <nodes name="Solid"
-        requires="VendingMachine Container"/>
+        requires="Container VendingMachine"/>
     <nodes name="Tea"
-        requires="VendingMachine Container Beverage"/>
+        requires="Container Beverage VendingMachine"/>
     <nodes name="Coffee"
-        requires="VendingMachine Container Beverage"/>
+        requires="Container Beverage VendingMachine"/>
     <nodes name="Sugar"
-        requires="VendingMachine Supplement Beverage Container"/>
+        requires="Supplement Beverage Container VendingMachine"/>
     <nodes name="Milk"
-        requires="VendingMachine Supplement Coffee Container"/>
+        requires="Supplement Coffee Container VendingMachine"/>
     <relations
         parent="VendingMachine"
         childs="Container Supplement"/>
