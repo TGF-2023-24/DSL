@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/pnpl_fide/src" modelPluginID="pnpl_fide" modelName="Pnplmodel"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>pnplv.ecore</foreignModel>
+  <genPackages prefix="Pnpl_variability" disposableProviderFactory="true" ecorePackage="pnplv.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pnplv.ecore#//RelationType">
+      <genEnumLiterals ecoreEnumLiteral="pnplv.ecore#//RelationType/DEFAULT"/>
+      <genEnumLiterals ecoreEnumLiteral="pnplv.ecore#//RelationType/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="pnplv.ecore#//RelationType/ALTERNATIVE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pnplv.ecore#//UnaryOperator">
+      <genEnumLiterals ecoreEnumLiteral="pnplv.ecore#//UnaryOperator/NOT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="pnplv.ecore#//BinaryOperator">
+      <genEnumLiterals ecoreEnumLiteral="pnplv.ecore#//BinaryOperator/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="pnplv.ecore#//BinaryOperator/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="pnplv.ecore#//BinaryOperator/XOR"/>
+      <genEnumLiterals ecoreEnumLiteral="pnplv.ecore#//BinaryOperator/IFF"/>
+      <genEnumLiterals ecoreEnumLiteral="pnplv.ecore#//BinaryOperator/IMPLIES"/>
+    </genEnums>
+    <genClasses ecoreClass="pnplv.ecore#//pnpl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pnplv.ecore#//pnpl/pn_150"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pnplv.ecore#//pnpl/featuremodel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pnplv.ecore#//pnpl/presenceconditions"/>
+    </genClasses>
+    <genClasses ecoreClass="pnplv.ecore#//PetriNet">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pnplv.ecore#//PetriNet/elements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pnplv.ecore#//Element">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pnplv.ecore#//Element/presenceCondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pnplv.ecore#//Element/name"/>
+    </genClasses>
+    <genClasses ecoreClass="pnplv.ecore#//Place">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pnplv.ecore#//Place/tokens"/>
+    </genClasses>
+    <genClasses ecoreClass="pnplv.ecore#//Transition"/>
+    <genClasses image="false" ecoreClass="pnplv.ecore#//Arc">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pnplv.ecore#//Arc/weight"/>
+    </genClasses>
+    <genClasses ecoreClass="pnplv.ecore#//ArcTP">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pnplv.ecore#//ArcTP/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pnplv.ecore#//ArcTP/target"/>
+    </genClasses>
+    <genClasses ecoreClass="pnplv.ecore#//ArcPT">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pnplv.ecore#//ArcPT/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pnplv.ecore#//ArcPT/target"/>
+    </genClasses>
+    <genClasses ecoreClass="pnplv.ecore#//FeatureModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pnplv.ecore#//FeatureModel/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pnplv.ecore#//FeatureModel/relations"/>
+    </genClasses>
+    <genClasses ecoreClass="pnplv.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pnplv.ecore#//Node/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pnplv.ecore#//Node/abstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pnplv.ecore#//Node/mandatory"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pnplv.ecore#//Node/exclude"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pnplv.ecore#//Node/requires"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pnplv.ecore#//Node/root"/>
+    </genClasses>
+    <genClasses ecoreClass="pnplv.ecore#//Relation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pnplv.ecore#//Relation/parent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pnplv.ecore#//Relation/childs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pnplv.ecore#//Relation/type"/>
+    </genClasses>
+    <genClasses ecoreClass="pnplv.ecore#//PresenceCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pnplv.ecore#//PresenceCondition/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pnplv.ecore#//PresenceCondition/expression"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="pnplv.ecore#//Expression"/>
+    <genClasses ecoreClass="pnplv.ecore#//Feature">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference pnplv.ecore#//Feature/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="pnplv.ecore#//UnaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pnplv.ecore#//UnaryExpression/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pnplv.ecore#//UnaryExpression/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="pnplv.ecore#//BinaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pnplv.ecore#//BinaryExpression/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute pnplv.ecore#//BinaryExpression/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference pnplv.ecore#//BinaryExpression/right"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
