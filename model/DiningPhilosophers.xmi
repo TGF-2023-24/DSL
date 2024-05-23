@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pnpl_variability:pnpl xmi:version="2.0"
+<pnpl_variability:Pnpl xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:pnpl_variability="http://www.petrinets.org/pnpl_variability"
@@ -341,4 +341,4 @@
           feature="FourP"/>
     </expression>
   </presenceconditions>
-</pnpl_variability:pnpl>
+</pnpl_variability:Pnpl>

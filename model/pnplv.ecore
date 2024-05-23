@@ -9,7 +9,7 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="pnpl">
+  <eClassifiers xsi:type="ecore:EClass" name="Pnpl">
     <eStructuralFeatures xsi:type="ecore:EReference" name="pn_150" lowerBound="1"
         eType="#//PetriNet" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="featuremodel" lowerBound="1"
